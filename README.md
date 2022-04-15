@@ -1,2 +1,2 @@
-# AVA-Mind-React-
+# AVA-Mind-React
  AVAMind project
