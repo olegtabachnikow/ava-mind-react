@@ -1,1 +1,1 @@
-https://eskel4ik.github.io/AVA-Mind-React/public/index.html
+https://eskel4ik.github.io/AVA-Mind-React/index.html
