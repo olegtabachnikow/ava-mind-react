@@ -1,4 +1,5 @@
 import { translations } from "../contexts/translationContext";
+import '../css/Content.css';
 
 function Greetings({ lang }) {
   return (

@@ -1,0 +1,91 @@
+.checkbox {
+    contain: content;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    color: rgba(59, 76, 102, .7);
+    font-size: 18px;
+    line-height: 22px;
+    margin: 40px 40px 0 0;
+    border-radius: 68px;
+    height: 52px;
+}
+
+.checkbox label {
+    cursor: pointer;
+}
+
+.checkbox label>input {
+    appearance: none;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+    visibility: hidden;
+}
+
+.checkbox-box {
+    border: 1px #3B4C66;
+    align-items: center;
+    background: #FFFFFF;
+    border-radius: 68px;
+    display: flex;
+    height: 52px;
+    justify-content: center;
+    letter-spacing: -0.01em;
+    overflow: hidden;
+    padding: 0 22px;
+    position: relative;
+    transition: opacity 0.4s ease 0s;
+    user-select: none;
+}
+
+.checkbox-title {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+.checkbox-ripple {
+    border-radius: 68px;
+    display: block;
+    inset: 0;
+    overflow: hidden;
+    position: absolute;
+    transform: translateZ(0px);
+    z-index: 1;
+    box-shadow: none;
+    transition: background-color .6s linear;
+}
+
+.checkbox:hover .checkbox-ripple {
+    background: rgba(199, 215, 255, .4);
+}
+
+.checkbox-ripple span {
+    background: rgb(96, 111, 250);
+    border-radius: 50%;
+    display: block;
+    height: 100%;
+    transform: translateY(100%) translateZ(0px);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1) 0s, border-radius 0.5s cubic-bezier(0.4, 0, 0, 1) 0s;
+    width: 100%;
+}
+
+.checkbox label>input:checked~.checkbox-box .checkbox-ripple span {
+    border-radius: 0;
+    transform: translateY(0) translateZ(0);
+    transition-duration: 0s, 0s;
+    animation: buttons .5s cubic-bezier(.4, 0, 0, 1);
+}
+
+.checkbox label>input:checked~.checkbox-box .checkbox-title span {
+    color: #fff;
+    z-index: 10;
+}
+
+.box-shadow-blue {
+    box-shadow: 0px 20px 60px #C9D8FF;
+}
+

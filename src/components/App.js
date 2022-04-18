@@ -11,6 +11,7 @@ import Intro from "./Intro";
 import Greetings from "./Greetings";
 import Footer from "./Footer";
 import '../css/App.css';
+import Condition from "./Condition";
 
 function App() {
   const [lang, setLang] = React.useState("ru");
@@ -31,6 +32,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Intro lang={lang} />} />
               <Route path="/greetings" element={<Greetings lang={lang} />} />
+              <Route path="/condition" element={<Condition lang={lang} />} />
             </Routes>
           </Section>
           <Footer lang={lang} />
