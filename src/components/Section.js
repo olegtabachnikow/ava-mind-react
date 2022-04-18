@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import arrowPath from "../assets/svg/arrow.svg";
+import '../css/Section.css';
+
 function Section({ children }) {
   return (
     <div className="section">

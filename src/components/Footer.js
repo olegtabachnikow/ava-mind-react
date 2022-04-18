@@ -4,6 +4,7 @@ import telegram from "../assets/svg/contacts_telegram.svg";
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { translations } from "../contexts/translationContext";
+import '../css/Footer.css';
 
 function Footer({ lang }) {
   return (

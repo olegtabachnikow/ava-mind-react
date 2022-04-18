@@ -1,6 +1,7 @@
 import logoPath from "../assets/svg/logo.svg";
 import React from "react";
 import { Link } from "react-router-dom";
+import '../css/Header.css';
 
 function Header(props) {
   return (
