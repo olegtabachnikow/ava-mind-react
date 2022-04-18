@@ -1,0 +1,22 @@
+.section-materials__link {
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+    transform: none;
+    transition: all .4s linear;
+}
+
+.section-materials__link:hover {
+    transform: scale(1.05);
+    text-decoration: underline;
+}
+
+.section__link-icon {
+    width: 20px;
+    vertical-align: middle;
+  }
+
+  .email-form-input {
+    margin: 0 auto;
+    align-items: center;
+  }

@@ -4,14 +4,17 @@ import {
   TranslationContext,
   translations,
 } from "../contexts/translationContext";
+import '../css/App.css';
 import Header from "./Header";
 import LanguageChange from "./LanguageChange";
 import Section from "./Section";
 import Intro from "./Intro";
 import Greetings from "./Greetings";
-import Footer from "./Footer";
-import '../css/App.css';
 import Condition from "./Condition";
+import Mail from "./Mail";
+import Footer from "./Footer";
+
+
 
 function App() {
   const [lang, setLang] = React.useState("ru");
@@ -33,6 +36,7 @@ function App() {
               <Route path="/" element={<Intro lang={lang} />} />
               <Route path="/greetings" element={<Greetings lang={lang} />} />
               <Route path="/condition" element={<Condition lang={lang} />} />
+              <Route path="/mail" element={<Mail lang={lang} />} />
             </Routes>
           </Section>
           <Footer lang={lang} />
