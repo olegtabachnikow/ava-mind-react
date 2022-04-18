@@ -13,6 +13,7 @@ import Greetings from "./Greetings";
 import Condition from "./Condition";
 import Mail from "./Mail";
 import Thanks from "./Thanks";
+import Video from "./Video";
 import Footer from "./Footer";
 
 
@@ -38,6 +39,7 @@ function App() {
               <Route path="/condition" element={<Condition lang={lang} />} />
               <Route path="/mail" element={<Mail lang={lang} />} />
               <Route path="/thanks" element={<Thanks lang={lang} />} />
+              <Route path="/video" element={<Video lang={lang} />} />
             </Routes>
           </Section>
           <Footer lang={lang} />
