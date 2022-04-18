@@ -20,7 +20,7 @@ function Mail({ lang }) {
                   src={telegram}
                   alt="telegram icon"
                 />{" "}
-                {translations[lang].mailBotLink}
+                {translations[lang].botLink}
               </a>
               {translations[lang].mailTextEnd}
         </p>
@@ -30,7 +30,7 @@ function Mail({ lang }) {
             className="content__form-input email-form-input"
             type="email"
             required
-            placeholder={translations[lang].MailPlaceholder}
+            placeholder={translations[lang].mailPlaceholder}
           ></input>
         </div>
       </form>

@@ -12,8 +12,8 @@ import Intro from "./Intro";
 import Greetings from "./Greetings";
 import Condition from "./Condition";
 import Mail from "./Mail";
+import Thanks from "./Thanks";
 import Footer from "./Footer";
-
 
 
 function App() {
@@ -37,6 +37,7 @@ function App() {
               <Route path="/greetings" element={<Greetings lang={lang} />} />
               <Route path="/condition" element={<Condition lang={lang} />} />
               <Route path="/mail" element={<Mail lang={lang} />} />
+              <Route path="/thanks" element={<Thanks lang={lang} />} />
             </Routes>
           </Section>
           <Footer lang={lang} />
