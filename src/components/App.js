@@ -19,6 +19,16 @@ import Footer from "./Footer";
 
 function App() {
   const [lang, setLang] = React.useState("ru");
+  const [currentUserName, setCurrentUserName] = React.useState('');
+  const [currentUserJob, setCurrentUserJob] = React.useState('');
+  function handleUserName(data) {
+    setCurrentUserName(data);
+    console.log(currentUserName);
+  }
+  function handleUserJob(data) {
+    setCurrentUserJob(data);
+    console.log(currentUserJob);
+  }
   function handleCurrentLanguage(current) {
     setLang(current);
   }
@@ -34,12 +44,12 @@ function App() {
           </Header>
           <Section>
             <Routes>
-              <Route path="/" element={<Intro lang={lang} />} />
-              <Route path="/greetings" element={<Greetings lang={lang} />} />
+              <Route path="/" element={<Intro lang={lang} onUser={handleUserName}/>} />
+              <Route path="/greetings" element={<Greetings lang={lang} currentUser={currentUserName} onUser={handleUserJob} />} />
               <Route path="/condition" element={<Condition lang={lang} />} />
-              <Route path="/mail" element={<Mail lang={lang} />} />
-              <Route path="/thanks" element={<Thanks lang={lang} />} />
-              <Route path="/video" element={<Video lang={lang} />} />
+              <Route path="/mail" element={<Mail lang={lang} currentUser={currentUserName}/>} />
+              <Route path="/thanks" element={<Thanks lang={lang} currentUser={currentUserName} />} />
+              <Route path="/video" element={<Video lang={lang} currentUser={currentUserName}/>} />
             </Routes>
           </Section>
           <Footer lang={lang} />

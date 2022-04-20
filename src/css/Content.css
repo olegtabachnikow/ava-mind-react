@@ -1,6 +1,8 @@
-
-.content{
-    margin-top: auto;
+.content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .content__title {
   margin: auto 0 5% 0;
@@ -15,6 +17,7 @@
 }
 .content__input-wrapper {
   display: flex;
+  position: relative;
 }
 .content__form-question {
   font-size: 36px;
@@ -46,4 +49,52 @@
   line-height: 1.6rem;
   letter-spacing: -0.02em;
   opacity: 0.7;
+}
+.next-button__container {
+  display: flex;
+  margin-top: auto;
+  justify-content: flex-end;
+}
+.next-button {
+  display: flex;
+  width: 120px;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  border: 2px solid #fff;
+  border-radius: 100px;
+  position: relative;
+  background-color: transparent;
+}
+
+.next-button__overlay {
+  display: flex;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: transparent;
+  border-radius: 100px;
+  border: 2px solid transparent;
+  z-index: 0;
+  transition: box-shadow .2s linear;
+}
+.next-button:hover .next-button__overlay {
+  background: radial-gradient(#F5AE9D, transparent);
+  background-position-y: bottom;
+  border: 2px solid #fff;
+  box-shadow: 0px 20px 60px #F5AE9D;
+}
+.next-button__icon {
+  width: 1.5rem;
+  z-index: 1;
+}
+.next-button:active .next-button__overlay {
+  background: #fff;
+  box-shadow: none;
+}
+.next-button:active {
+  background-color: #fff;
+}
+.next-button:active .next-button__icon {
+  filter: invert(28%) sepia(31%) saturate(497%) hue-rotate(177deg) brightness(54%) contrast(97%);
 }

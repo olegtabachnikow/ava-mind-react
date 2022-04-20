@@ -9,8 +9,12 @@
     margin: 40px 40px 0 0;
     border-radius: 68px;
     height: 52px;
+    box-shadow: 0px 20px 60px #c9d8ff;
+    transition: box-shadow 0.2s linear;
 }
-
+.checkbox:hover {
+    box-shadow: 0px 20px 60px #96b3ff;
+}
 .checkbox label {
     cursor: pointer;
 }
@@ -56,15 +60,12 @@
     transform: translateZ(0px);
     z-index: 1;
     box-shadow: none;
-    transition: background-color .6s linear;
 }
 
-.checkbox:hover .checkbox-ripple {
-    background: rgba(199, 215, 255, .4);
-}
+
 
 .checkbox-ripple span {
-    background: rgb(96, 111, 250);
+    background: #668cee;
     border-radius: 50%;
     display: block;
     height: 100%;
@@ -76,16 +77,16 @@
 .checkbox label>input:checked~.checkbox-box .checkbox-ripple span {
     border-radius: 0;
     transform: translateY(0) translateZ(0);
-    transition-duration: 0s, 0s;
-    animation: buttons .5s cubic-bezier(.4, 0, 0, 1);
 }
 
 .checkbox label>input:checked~.checkbox-box .checkbox-title span {
     color: #fff;
     z-index: 10;
 }
-
-.box-shadow-blue {
-    box-shadow: 0px 20px 60px #C9D8FF;
+.condition__shadow-box {
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
 }
-

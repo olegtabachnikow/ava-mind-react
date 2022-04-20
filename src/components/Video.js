@@ -2,11 +2,10 @@ import { translations } from "../contexts/translationContext";
 import '../css/Content.css';
 import '../css/Video.css';
 
-function Video({ lang }) {
+function Video({ lang, currentUser }) {
   return (
     <div className="video content">
-      <span className="user-name"></span>
-      <p className="content__text">{translations[lang].videoText}</p>
+      <p className="content__text"><span className="user-name">{currentUser}</span>{translations[lang].videoText}</p>
       <div className="section-video__content-wrapper">
         <iframe
                 className="iframe"

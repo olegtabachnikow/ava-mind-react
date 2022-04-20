@@ -1,8 +1,8 @@
-import '../css/Checkbox.css';
+import "../css/Checkbox.css";
 
-function Checkbox({value}) {
-    return (
-        <div className="checkbox box-shadow-blue">
+function Checkbox({ value }) {
+  return (
+        <div className="checkbox">
                   <label className="form__label">
                     <input
                       className="section-stances__input"
@@ -19,7 +19,7 @@ function Checkbox({value}) {
                     </span>
                   </label>
             </div>
-    )
+    ) 
 }
 
 export default Checkbox;

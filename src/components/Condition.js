@@ -1,4 +1,6 @@
 import { translations } from "../contexts/translationContext";
+import { Link } from "react-router-dom";
+import arrowPath from "../assets/svg/arrow.svg";
 import Checkbox from "./Checkbox";
 import '../css/Content.css';
 import '../css/Condition.css';
@@ -29,6 +31,16 @@ function Condition({ lang }) {
           ></input>
         </div>
       </form>
+      <div className="next-button__container">
+        <Link className="next-button" to="/mail">
+          <img
+            className="next-button__icon"
+            src={arrowPath}
+            alt="white arrow icon"
+          />
+          <div className="next-button__overlay"></div>
+        </Link>
+      </div>
     </div>
   );
 }

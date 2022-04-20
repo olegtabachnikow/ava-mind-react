@@ -1,17 +1,17 @@
-.section-materials__link {
+.mail .content__text{
+  margin-top: auto;
+}
+.content__link {
     display: inline-block;
     text-decoration: none;
     color: #000;
-    transform: none;
-    transition: all .4s linear;
 }
 
-.section-materials__link:hover {
-    transform: scale(1.05);
+.content__link:hover {
     text-decoration: underline;
 }
 
-.section__link-icon {
+.content__link-icon {
     width: 20px;
     vertical-align: middle;
   }
