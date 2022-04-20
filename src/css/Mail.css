@@ -1,0 +1,22 @@
+.mail .content__text{
+  margin-top: auto;
+}
+.content__link {
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+}
+
+.content__link:hover {
+    text-decoration: underline;
+}
+
+.content__link-icon {
+    width: 20px;
+    vertical-align: middle;
+  }
+
+  .email-form-input {
+    margin: 0 auto;
+    align-items: center;
+  }

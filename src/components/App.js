@@ -1,44 +1,62 @@
 import React from "react";
-import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {
   TranslationContext,
   translations,
 } from "../contexts/translationContext";
+import '../css/App.css';
 import Header from "./Header";
+import LanguageChange from "./LanguageChange";
 import Section from "./Section";
+import Intro from "./Intro";
+import Greetings from "./Greetings";
+import Condition from "./Condition";
+import Mail from "./Mail";
+import Thanks from "./Thanks";
+import Video from "./Video";
 import Footer from "./Footer";
-import styled from 'styled-components';
-import background1 from '../assets/images/background-1.jpg';
-import { Routes,  Route,  Link,  Outlet } from 'react-router-dom';
-import {sections} from '../data/section-data';
+
 
 function App() {
   const [lang, setLang] = React.useState("ru");
-  
+  const [currentUserName, setCurrentUserName] = React.useState('');
+  const [currentUserJob, setCurrentUserJob] = React.useState('');
+  function handleUserName(data) {
+    setCurrentUserName(data);
+    console.log(currentUserName);
+  }
+  function handleUserJob(data) {
+    setCurrentUserJob(data);
+    console.log(currentUserJob);
+  }
+  function handleCurrentLanguage(current) {
+    setLang(current);
+  }
   return (
-    
-    <Page style={{background: `url(${background1})`}}>
+    <div className="page">
       <TranslationContext.Provider value={translations[lang]}>
-        <Header /> 
-        <Routes>
-          <Route path="/" 
-          element={<Section header={sections.name.header} text={sections.name.text} 
-          label={sections.name.label} placeholder={sections.name.placeholder} link={sections.name.link} />} />
-          <Route path="occupation" 
-          element={<Section header={sections.occupation.header} text={sections.occupation.text} 
-          label={sections.occupation.label} placeholder={sections.occupation.placeholder} link={sections.occupation.link} />} />        
-      </Routes> 
-      <Footer />
+        <BrowserRouter>
+          <Header>
+            <LanguageChange
+              onChange={handleCurrentLanguage}
+              currentLang={translations[lang].currentLang}
+            />
+          </Header>
+          <Section>
+            <Routes>
+              <Route path="/" element={<Intro lang={lang} onUser={handleUserName}/>} />
+              <Route path="/greetings" element={<Greetings lang={lang} currentUser={currentUserName} onUser={handleUserJob} />} />
+              <Route path="/condition" element={<Condition lang={lang} />} />
+              <Route path="/mail" element={<Mail lang={lang} currentUser={currentUserName}/>} />
+              <Route path="/thanks" element={<Thanks lang={lang} currentUser={currentUserName} />} />
+              <Route path="/video" element={<Video lang={lang} currentUser={currentUserName}/>} />
+            </Routes>
+          </Section>
+          <Footer lang={lang} />
+        </BrowserRouter>
       </TranslationContext.Provider>
-    </Page>
-    
+    </div>
   );
 }
 
 export default App;
-
-const Page = styled.div`  
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: contain;
-  `

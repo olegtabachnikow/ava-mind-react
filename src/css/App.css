@@ -1,0 +1,12 @@
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-image: url(../assets/images/background-1.jpg);
+    background-size: cover;
+    font-family: "Neue Haas Unica", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #3b4c66;
+    overflow: hidden;
+  }

@@ -1,0 +1,12 @@
+.thanks .content__text {
+    margin-top: auto;
+}
+.content__link {
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+}
+
+.content__link:hover {
+    text-decoration: underline;
+}

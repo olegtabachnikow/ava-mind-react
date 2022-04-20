@@ -1,46 +1,51 @@
-import styled from 'styled-components';
-import presentation from '../assets/svg/presentation.svg';
-import contacts from '../assets/svg/contacts.svg';
-import telegram from '../assets/svg/contacts_telegram.svg';
+import presentation from "../assets/svg/presentation.svg";
+import contacts from "../assets/svg/contacts.svg";
+import telegram from "../assets/svg/contacts_telegram.svg";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { translations } from "../contexts/translationContext";
+import "../css/Footer.css";
 
-
-function Footer() {
-    return <FooterWrapper>
-        <FooterLinks>
-            <Link>
-                <img className="presentation" src={presentation} alt="ava mind presentation" />
-                <p>Презентация</p>
-            </Link>
-            <Link>
-                <img className="presentation" src={contacts} alt="ava mind presentation" />
-                <p>Контакты</p>
-            </Link>
-            <Link>
-                <img className="presentation" src={telegram} alt="ava mind presentation" />
-                <p>Телеграм</p>
-            </Link>
-        </FooterLinks>
-    </FooterWrapper>
+function Footer({ lang }) {
+  return (
+    <nav className="footer">
+      <a
+        className="footer__link"
+        href="https://drive.google.com/file/d/1pJOOJldevCgjPEjIRQGN4d_tk-xf_SoR/view"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img
+          className="footer__link-icon"
+          src={presentation}
+          alt="ava mind presentation"
+        />
+        <p className="footer__link-text">
+          {translations[lang].footerPresentation}
+        </p>
+      </a>
+      <NavLink className="footer__link" to="#">
+        <img
+          className="footer__link-icon"
+          src={contacts}
+          alt="ava mind contacts"
+        />
+        <p className="footer__link-text">{translations[lang].footerContacts}</p>
+      </NavLink>
+      <a
+        className="footer__link"
+        href="https://t.me/ava_mind_bot"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img
+          className="footer__link-icon"
+          src={telegram}
+          alt="ava mind telegram"
+        />
+        <p className="footer__link-text">{translations[lang].footerTelegram}</p>
+      </a>
+    </nav>
+  );
 }
 export default Footer;
-
-const FooterWrapper = styled.div`
-    height: 70px;  
-    padding-left: 138px;  
-`
-
-const FooterLinks = styled.div`
-    max-width: 490px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-`
-
-const Link = styled.div`
-    display: flex;
-    align-items: center;
-
-        img {
-            margin-right: 10px;
-        }
-`

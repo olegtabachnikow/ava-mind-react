@@ -1,0 +1,14 @@
+.condition {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.condition .content__text {
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.condition .content__input-wrapper {
+    margin-top: 30px;
+}
