@@ -15,6 +15,7 @@ import Mail from "./Mail";
 import Thanks from "./Thanks";
 import Video from "./Video";
 import Footer from "./Footer";
+import Contacts from "./Contacts";
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
               <Route path="/mail" element={<Mail lang={lang} currentUser={currentUserName}/>} />
               <Route path="/thanks" element={<Thanks lang={lang} currentUser={currentUserName} />} />
               <Route path="/video" element={<Video lang={lang} currentUser={currentUserName}/>} />
+              <Route path="/contacts" element={<Contacts lang={lang}/>} />
             </Routes>
           </Section>
           <Footer lang={lang} />

@@ -24,7 +24,7 @@ function Footer({ lang }) {
           {translations[lang].footerPresentation}
         </p>
       </a>
-      <NavLink className="footer__link" to="#">
+      <NavLink className="footer__link" to="/contacts">
         <img
           className="footer__link-icon"
           src={contacts}
