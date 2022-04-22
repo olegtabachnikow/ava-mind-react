@@ -1,0 +1,8 @@
+.greetings .content__text {
+    padding-right: 180px;
+    margin-bottom: 30px;
+}
+
+.content__input-wrapper_type_greetings {
+    flex-direction: column;
+}

@@ -9,15 +9,20 @@ function Thanks({ lang, currentUser}) {
   return (
     <div className="thanks content">
       <p className="content__text">
-        {translations[lang].thanksTextStart}
+        {translations[lang].thanksTitle}
         <span className="user-name">{currentUser}</span>
-        {translations[lang].thanksTextMiddle} {" "}
+        {translations[lang].thanksExclamation}
+        {translations[lang].thanksTextStart}
+      </p>
+      <p className="content__text">
+         {" "}
               <a
                 className="content__link"
                 href="#team"
               >
                 {translations[lang].thanksTeamLink}
               </a>
+              {translations[lang].thanksTeamEnd}
               ,{" "}
               <a
                 className="content__link"
@@ -26,6 +31,12 @@ function Thanks({ lang, currentUser}) {
               >
                 {translations[lang].thanksPresentationLink}
               </a>{" "}
+              {translations[lang].thanksPresentationEnd}
+              <a className="content__link"
+                href="/contacts"
+                rel="noreferrer">
+                  {translations[lang].thanksContacts}
+              </a>
               {translations[lang].thanksBot}{" "}
               <a
                 className="content__link"
@@ -39,9 +50,12 @@ function Thanks({ lang, currentUser}) {
                 />{" "}
                 {translations[lang].botLink}
               </a>
-              .<br />
-              {translations[lang].thanksTextEnd}
+              {translations[lang].thanksBotEnd}
+              <br />                           
       </p>   
+      <p className="content__text">
+        {translations[lang].thanksTextEnd}
+      </p> 
       <div className="next-button__container">
         <Link className="next-button" to="/video">
           <img

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import arrowPath from "../assets/svg/arrow.svg";
 import { translations } from "../contexts/translationContext";
 import '../css/Content.css';
+import '../css/Greetings.css';
 
 function Greetings({ lang, onUser, currentUser }) {
   const [userJob, setUserJob] = React.useState('');
@@ -21,7 +22,7 @@ function Greetings({ lang, onUser, currentUser }) {
       </h2>
       <p className="content__text">{translations[lang].greetingsText}</p>
       <form action="#">
-        <div className="content__input-wrapper content__input-wrapper_type_intro">
+        <div className="content__input-wrapper content__input-wrapper_type_greetings">
           <h3 className="content__form-question">
             {translations[lang].greetingsQuestion}
           </h3>

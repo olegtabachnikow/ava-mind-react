@@ -1,5 +1,6 @@
 .mail .content__text{
   margin-top: auto;
+  padding-right: 200px;
 }
 .content__link {
     display: inline-block;
@@ -14,9 +15,4 @@
 .content__link-icon {
     width: 20px;
     vertical-align: middle;
-  }
-
-  .email-form-input {
-    margin: 0 auto;
-    align-items: center;
   }

@@ -24,7 +24,10 @@ function Mail({ lang, currentUser }) {
                 />{" "}
                 {translations[lang].botLink}
               </a>
-              {translations[lang].mailTextEnd}
+              {translations[lang].mailTextMiddle}
+        </p>
+        <p className="content__text">
+          {translations[lang].mailTextEnd}
         </p>
       <form action="#">
         <div className="content__input-wrapper content__input-wrapper_type_intro">

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import arrowPath from "../assets/svg/arrow.svg";
 import { translations } from "../contexts/translationContext";
 import '../css/Content.css';
+import '../css/Intro.css';
 
 function Intro({ lang, onUser }) {
   const [userName, setUserName] = React.useState('');
@@ -15,7 +16,7 @@ function Intro({ lang, onUser }) {
   return (
     <div className="intro content">
       <h2 className="content__title">{translations[lang].introTitle}</h2>
-      <p className="content__text">{translations[lang].introText}</p>
+      <p className="content__text">{translations[lang].introText}</p>      
       <form action="#">
         <div className="content__input-wrapper content__input-wrapper_type_intro">
           <h3 className="content__form-question">

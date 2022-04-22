@@ -1,3 +1,7 @@
+.contacts {
+    display: flex;
+}
+
 .section-team__content {
     display: flex;
     width: 80%;
@@ -58,3 +62,10 @@
     line-height: 2.5rem;
 }
 
+.contacts__link {
+    display: flex;
+}
+
+.contacts__address {
+    width: 200px;
+}
