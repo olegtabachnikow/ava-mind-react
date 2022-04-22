@@ -1,3 +1,4 @@
+import React from "react";
 import { translations } from "../contexts/translationContext";
 import { Link } from "react-router-dom";
 import arrowPath from "../assets/svg/arrow.svg";
@@ -6,7 +7,16 @@ import '../css/Content.css';
 import '../css/Condition.css';
 
 
-function Condition({ lang }) {
+function Condition({ lang, onUser }) {
+
+  const [userCondition, setUserCondition] = React.useState('');
+  function handleChange(evt) {
+    setUserCondition(evt.target.value);
+  }
+  function handleClick() {
+    onUser(userCondition);
+  }
+
   return (
     <div className="condition content">
       <h2 className="content__title">
@@ -33,6 +43,7 @@ function Condition({ lang }) {
             {translations[lang].conditionQuestion}
           </h3>
           <input
+            onChange={handleChange}
             className="content__form-input"
             type="text"
             placeholder={translations[lang].conditionPlaceholder}
@@ -40,7 +51,7 @@ function Condition({ lang }) {
         </div>
       </form>
       <div className="next-button__container">
-        <Link className="next-button" to="/mail">
+        <Link className="next-button" to="/mail" onClick={handleClick}>
           <img
             className="next-button__icon"
             src={arrowPath}

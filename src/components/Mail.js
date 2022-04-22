@@ -1,3 +1,4 @@
+import React from "react";
 import { translations } from "../contexts/translationContext";
 import { Link } from "react-router-dom";
 import arrowPath from "../assets/svg/arrow.svg";
@@ -5,7 +6,42 @@ import '../css/Content.css';
 import '../css/Mail.css';
 import telegram from "../assets/svg/contacts_telegram.svg";
 
-function Mail({ lang, currentUser }) {
+function Mail({ lang, onUser, currentUser, data }) {
+
+  const [userMail, setUserMail] = React.useState('');
+
+  const sendUserData = (data) => {
+    return fetch("https://avamind-core.herokuapp.com/api/v1/user", {
+      method: "POST",
+      headers: {
+        accept: "*/*",
+        "Content-Type": "application/json",
+      },
+      body: data,
+    });
+  };
+
+  function handleUserData(data) {
+    let dataToSend = JSON.stringify(data);
+    console.log(dataToSend);
+    sendUserData(dataToSend)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+      console.log(dataToSend);
+  }
+
+  function handleChange(evt) {
+    setUserMail(evt.target.value);
+  }
+  function handleClick() {
+    onUser(userMail);
+    handleUserData(data);
+  }
+
   return (
     <div className="mail content">
       <p className="content__text">
@@ -32,6 +68,7 @@ function Mail({ lang, currentUser }) {
       <form action="#">
         <div className="content__input-wrapper content__input-wrapper_type_intro">
           <input
+            onChange={handleChange}
             className="content__form-input email-form-input"
             type="email"
             required
@@ -41,7 +78,7 @@ function Mail({ lang, currentUser }) {
         </div>
       </form>
       <div className="next-button__container">
-        <Link className="next-button" to="/thanks">
+        <Link className="next-button" to="/thanks" onClick={handleClick}>
           <img
             className="next-button__icon"
             src={arrowPath}

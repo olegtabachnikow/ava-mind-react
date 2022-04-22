@@ -38,7 +38,7 @@ function Greetings({ lang, onUser, currentUser }) {
         </div>
       </form>
       <div className="next-button__container">
-        <Link onClick={handleClick}className="next-button" to="/condition">
+        <Link onClick={handleClick} className="next-button" to="/condition">
           <img
             className="next-button__icon"
             src={arrowPath}
