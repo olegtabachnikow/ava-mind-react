@@ -53,11 +53,6 @@ function Mail({ lang, onUser, currentUser, data }) {
                 href="https://t.me/ava_mind_bot"
                 target="_blank" rel="noreferrer"
               >
-                <img
-                  className="content__link-icon"
-                  src={telegram}
-                  alt="telegram icon"
-                />{" "}
                 {translations[lang].botLink}
               </a>
               {translations[lang].mailTextMiddle}

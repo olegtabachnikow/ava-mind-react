@@ -24,16 +24,23 @@ function App() {
   const [currentUserJob, setCurrentUserJob] = React.useState('');
   const [currentUserCondition, setCurrentUserCondition] = React.useState('');
   const [currentUserMail, setCurrentUserMail] = React.useState('');
+  const [isActive, setIsActive] = React.useState(false);
+  React.useEffect(() => {
+    console.log(currentUserName);
+  },[currentUserName]);
+
+  function handleActiveStance(data) {
+    setIsActive(data);
+  }
   const currentUserData = {
     name: currentUserName,
     job: currentUserJob,
     condition: currentUserCondition,
     email: currentUserMail
   };
-
+ 
   function handleUserName(data) {
     setCurrentUserName(data);
-    console.log(currentUserName);
   }
 
   function handleUserJob(data) {
@@ -74,10 +81,10 @@ function App() {
               onUser={handleUserMail} data={currentUserData} />} />
               <Route path="/thanks" element={<Thanks lang={lang} currentUser={currentUserName} />} />
               <Route path="/video" element={<Video lang={lang} currentUser={currentUserName}/>} />
-              <Route path="/contacts" element={<Contacts lang={lang}/>} />
+              <Route path="/contacts" element={<Contacts lang={lang} setActiveStance={handleActiveStance}/>} />
             </Routes>
           </Section>
-          <Footer lang={lang} />
+          <Footer lang={lang} isActive={isActive}/>
         </BrowserRouter>
       </TranslationContext.Provider>
     </div>

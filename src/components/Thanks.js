@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import arrowPath from "../assets/svg/arrow.svg";
 import '../css/Content.css';
 import '../css/Thanks.css';
-import telegram from "../assets/svg/contacts_telegram.svg";
 
 function Thanks({ lang, currentUser}) {
   return (
@@ -18,7 +17,7 @@ function Thanks({ lang, currentUser}) {
          {" "}
               <a
                 className="content__link"
-                href="#team"
+                href="/video"
               >
                 {translations[lang].thanksTeamLink}
               </a>
@@ -43,11 +42,6 @@ function Thanks({ lang, currentUser}) {
                 href="https://t.me/ava_mind_bot"
                 target="_blank" rel="noreferrer"
               >
-                <img
-                  className="content__link-icon"
-                  src={telegram}
-                  alt="telegram icon"
-                />{" "}
                 {translations[lang].botLink}
               </a>
               {translations[lang].thanksBotEnd}
@@ -57,7 +51,7 @@ function Thanks({ lang, currentUser}) {
         {translations[lang].thanksTextEnd}
       </p> 
       <div className="next-button__container">
-        <Link className="next-button" to="/video">
+      <Link className="next-button" to="/video">
           <img
             className="next-button__icon"
             src={arrowPath}

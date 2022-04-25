@@ -1,4 +1,5 @@
 import presentation from "../assets/svg/presentation.svg";
+import contactsWhite from "../assets/svg/contactsWhite.svg"
 import contacts from "../assets/svg/contacts.svg";
 import telegram from "../assets/svg/contacts_telegram.svg";
 import React from "react";
@@ -6,7 +7,7 @@ import { NavLink } from "react-router-dom";
 import { translations } from "../contexts/translationContext";
 import "../css/Footer.css";
 
-function Footer({ lang }) {
+function Footer({ lang, isActive }) { 
   return (
     <nav className="footer">
       <a
@@ -27,10 +28,10 @@ function Footer({ lang }) {
       <NavLink className="footer__link" to="/contacts">
         <img
           className="footer__link-icon"
-          src={contacts}
+          src={isActive ? contactsWhite : contacts}
           alt="ava mind contacts"
         />
-        <p className="footer__link-text">{translations[lang].footerContacts}</p>
+        <p className={`footer__link-text ${isActive ? "footer__link_active" : ""}`}>{translations[lang].footerContacts}</p>
       </NavLink>
       <a
         className="footer__link"

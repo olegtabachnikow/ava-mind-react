@@ -1,13 +1,11 @@
 .video {
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .video-wrapper {
     display: flex;
-}
-
-.video .content__text {
     margin-top: auto;
 }
 .iframe {
@@ -21,25 +19,17 @@
 .video .content__text {
     margin-bottom: 20px;
 }
-
-.next-button__container {
-    display: flex;
-    margin-top: auto;
-    justify-content: flex-end;
+.video__content-wrapper {
+    padding-top: 10rem;
+   margin-top: auto;
+}
+.video .next-button__container {
     align-items: center;
   }
-
+.next-button__container .content__text {
+    margin: 0 20px 0 0;
+}
 .back-button {
-    display: flex;
-    margin-left: 30px;
-    width: 120px;
-    align-items: center;
-    justify-content: center;
-    height: 120px;
-    border: 2px solid #fff;
-    border-radius: 100px;
-    position: relative;
-    background-color: transparent;
+   width: 92px;
+   height: 92px;
   }
-
-  

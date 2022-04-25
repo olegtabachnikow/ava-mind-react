@@ -1,71 +1,65 @@
 .contacts {
     display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: auto;
 }
 
-.section-team__content {
+.contacts__content {
     display: flex;
-    width: 80%;
     justify-content: space-between;
 }
 
-.section-team__item img {
+.contacts__item img {
+    filter: grayscale();
     transition: all .4s linear;
 }
 
-.section-team__item img:hover {
-    transform: scale(1.05);
+.contacts__item .contacts__item-photo:hover {
+    transform: scale(1.03);
 }
 
-.section-item__title {
+.contacts__title {
     font-size: 24px;
     line-height: 36px;
     margin: 30px 0 4px 0;
 }
 
-.section-item__subtitle {
+.contacts__subtitle {
     font-size: 18px;
     line-height: 27px;
 }
 
-.section__form-wrapper_type_email {
-    margin: 0 auto;
-}
-
-.section__item-link {
+.contacts__link {
     text-decoration: none;
     font-size: 24px;
     color: #3B4C66;
     display: flex;
     align-items: center;
-    transition: all .4s linear;
+    margin-top: .8rem;
 }
 
-.section__item-link-icon {
-    width: 1.5rem;
+.contacts__link-icon {
+    width: 1.2rem;
     margin-right: 10px;
 }
 
-.section__item-link:hover {
-    transform: scale(1.1);
-}
-
-.section__text_type_team:first-of-type {
-    margin: 15px 0 0 0;
-}
-
-.section__text_type_team:last-of-type {
-    margin-top: 5px;
-}
-
-.section__text_type_team {
-    font-size: 1.5rem;
-    line-height: 2.5rem;
-}
-
-.contacts__link {
+.contacts__links {
     display: flex;
 }
 
 .contacts__address {
-    width: 200px;
+    max-width: 220px;
+}
+.contacts__text {
+    margin: 3.5rem 0 0 0;
+}
+.contacts__adress-text {
+    margin-top: 2.5rem;
+}
+.next-button__container:hover .back-button_blue {
+    background: radial-gradient(#96b3ff, transparent);
+    background-position-y: bottom;
+    border: 2px solid #fff;
+    box-shadow: 0px 20px 60px #96b3ff;
 }

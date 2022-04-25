@@ -23,7 +23,7 @@ function Greetings({ lang, onUser, currentUser }) {
       <p className="content__text">{translations[lang].greetingsText}</p>
       <form action="#">
         <div className="content__input-wrapper content__input-wrapper_type_greetings">
-          <h3 className="content__form-question">
+          <h3 className="content__text">
             {translations[lang].greetingsQuestion}
           </h3>
           <input

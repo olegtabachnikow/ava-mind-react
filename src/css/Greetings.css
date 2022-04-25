@@ -1,6 +1,7 @@
 .greetings .content__text {
     padding-right: 180px;
     margin-bottom: 30px;
+    font-weight: normal;
 }
 
 .content__input-wrapper_type_greetings {
