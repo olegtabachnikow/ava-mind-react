@@ -31,24 +31,24 @@ function LanguageChange({ onChange, currentLang }) {
       >
         <button
           onClick={handleCurrentLangEn}
-          className="header__button-lang header__button-lang_value_en"
+          className="header__button-lang link_animated header__button-lang_value_en"
         >
           En
         </button>
         <button
           onClick={handleCurrentLangRu}
-          className="header__button-lang header__button-lang_value_ru"
+          className="header__button-lang link_animated header__button-lang_value_ru"
         >
           Ru
         </button>
         <button
           onClick={handleCurrentLangUk}
-          className="header__button-lang header__button-lang_value_uk"
+          className="header__button-lang link_animated header__button-lang_value_uk"
         >
           Uk
         </button>
       </div>
-      <div className="header__lang-wrapper" onClick={handleLangsVisibility}>
+      <div className="header__lang-wrapper link_animated" onClick={handleLangsVisibility}>
         <span className="header__current-lang">{currentLang}</span>
         <img
           className="header__lang-wrapper-icon"

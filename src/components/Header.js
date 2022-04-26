@@ -5,8 +5,8 @@ import '../css/Header.css';
 
 function Header(props) {
   return (
-    <div className="header">
-      <Link className="header__logo-wrapper" to="/">
+    <div className={`header ${props.isHidden && "hidden"}`}>
+      <Link className="header__logo-wrapper link_animated" to="/intro">
         <img className="header__logo" src={logoPath} alt="ava mind logo" />
         <p className="header__logo-text">AVA Mind</p>
       </Link>

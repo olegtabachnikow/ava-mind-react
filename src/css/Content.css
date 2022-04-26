@@ -7,21 +7,21 @@
 .content__title {
   margin: auto 0 3.5rem 0;
   font-weight: 400;
-  font-size: 36px;
-  line-height: 60px;
+  font-size: 2.2rem;
+  line-height: 3.8rem;
 }
 .content__text {
   margin: 0 0 8% 0;
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
 }
 .content__input-wrapper {
   display: flex;
   position: relative;
 }
 .content__form-question {
-  font-size: 36px;
-  line-height: 60px;
+  font-size: 2rem;
+  line-height: 3.8rem;
   margin: 0 5% 0 0;
   font-weight: 400;
 }

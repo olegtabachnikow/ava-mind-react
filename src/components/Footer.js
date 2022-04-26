@@ -7,11 +7,11 @@ import { NavLink } from "react-router-dom";
 import { translations } from "../contexts/translationContext";
 import "../css/Footer.css";
 
-function Footer({ lang, isActive }) { 
+function Footer({ lang, isActive, isHidden }) { 
   return (
-    <nav className="footer">
+    <nav className={`footer ${isHidden && "hidden"}`}>
       <a
-        className="footer__link"
+        className="footer__link link_animated"
         href="https://drive.google.com/file/d/1pJOOJldevCgjPEjIRQGN4d_tk-xf_SoR/view"
         target="_blank"
         rel="noreferrer"
@@ -25,7 +25,7 @@ function Footer({ lang, isActive }) {
           {translations[lang].footerPresentation}
         </p>
       </a>
-      <NavLink className="footer__link" to="/contacts">
+      <NavLink className="footer__link link_animated" to="/contacts">
         <img
           className="footer__link-icon"
           src={isActive ? contactsWhite : contacts}
@@ -34,7 +34,7 @@ function Footer({ lang, isActive }) {
         <p className={`footer__link-text ${isActive ? "footer__link_active" : ""}`}>{translations[lang].footerContacts}</p>
       </NavLink>
       <a
-        className="footer__link"
+        className="footer__link link_animated"
         href="https://t.me/ava_mind_bot"
         target="_blank"
         rel="noreferrer"

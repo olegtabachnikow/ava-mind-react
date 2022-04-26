@@ -30,7 +30,7 @@ function Thanks({ lang, currentUser}) {
       <p className="content__text">
          {" "}
               <a
-                className="content__link"
+                className="content__link link_animated"
                 href="/video"
               >
                 {translations[lang].thanksTeamLink}
@@ -38,21 +38,21 @@ function Thanks({ lang, currentUser}) {
               {translations[lang].thanksTeamEnd}
               ,{" "}
               <a
-                className="content__link"
+                className="content__link link_animated"
                 href="https://drive.google.com/file/d/1pJOOJldevCgjPEjIRQGN4d_tk-xf_SoR/view"
                 target="_blank" rel="noreferrer"
               >
                 {translations[lang].thanksPresentationLink}
               </a>{" "}
               {translations[lang].thanksPresentationEnd}
-              <a className="content__link"
+              <a className="content__link link_animated"
                 href="/contacts"
                 rel="noreferrer">
                   {translations[lang].thanksContacts}
               </a>
               {translations[lang].thanksBot}{" "}
               <a
-                className="content__link"
+                className="content__link link_animated"
                 href="https://t.me/ava_mind_bot"
                 target="_blank" rel="noreferrer"
               >

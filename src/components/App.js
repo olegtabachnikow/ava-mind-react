@@ -5,6 +5,7 @@ import {
   translations,
 } from "../contexts/translationContext";
 import '../css/App.css';
+import Preloader from "./Preloader";
 import Header from "./Header";
 import LanguageChange from "./LanguageChange";
 import Section from "./Section";
@@ -26,9 +27,12 @@ function App() {
   const [currentPersonalCondition, setCurrentPersonalCondition] = React.useState('');
   const [currentUserMail, setCurrentUserMail] = React.useState('');
   const [isActive, setIsActive] = React.useState(false);
-  
+  const [isHidden, setIsHidden] = React.useState(true);
   function handleActiveStance(data) {
     setIsActive(data);
+  }
+  function handleHiddenComponent() {
+    setIsHidden(false);
   }
   const currentUserData = {
     name: currentUserName,
@@ -63,7 +67,7 @@ function App() {
     <div className="page">
       <TranslationContext.Provider value={translations[lang]}>
         <BrowserRouter>
-          <Header>
+          <Header isHidden={isHidden}>
             <LanguageChange
               onChange={handleCurrentLanguage}
               currentLang={translations[lang].currentLang}
@@ -71,7 +75,8 @@ function App() {
           </Header>
           <Section>
             <Routes>
-              <Route path="/" element={<Intro lang={lang} onUser={handleUserName}/>} />
+            <Route path="/" element={<Preloader onHide={handleHiddenComponent}/>} />
+              <Route path="/intro" element={<Intro lang={lang} onUser={handleUserName}/>} />
               <Route path="/greetings" element={<Greetings lang={lang} currentUser={currentUserName} onUser={handleUserJob} />} />
               <Route path="/condition" element={<Condition lang={lang} onUser={handleUserCondition}/>} />
               <Route path="/mail" element={<Mail lang={lang} currentUser={currentUserName} 
@@ -81,7 +86,7 @@ function App() {
               <Route path="/contacts" element={<Contacts lang={lang} setActiveStance={handleActiveStance}/>} />
             </Routes>
           </Section>
-          <Footer lang={lang} isActive={isActive}/>
+          <Footer lang={lang} isActive={isActive} isHidden={isHidden}/>
         </BrowserRouter>
       </TranslationContext.Provider>
     </div>

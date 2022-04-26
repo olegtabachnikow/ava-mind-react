@@ -20,7 +20,7 @@ function Mail({ lang, onUser, currentUser }) {
         {translations[lang].mailTextStart}
               {" "}
               <a
-                className="content__link"
+                className="content__link link_animated"
                 href="https://t.me/ava_mind_bot"
                 target="_blank" rel="noreferrer"
               >

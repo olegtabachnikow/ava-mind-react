@@ -7,23 +7,19 @@
   .header__logo-wrapper {
     display: flex;
     align-items: baseline;
-    margin: 6vh 0 0 0;
-    padding-bottom: 10px;
+    margin: 5.5vh 0 0 0;
   }
   .header__logo {
-    height: 1.7rem;
+    height: 28px;
   }
   .header__logo-text {
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 32px;
+    line-height: 32px;
     margin: 0 0 0 20px;
   }
   .header__logo-wrapper {
     text-decoration: none;
     color: inherit;
-  }
-  .header__logo-wrapper:hover {
-    border-bottom: 3px solid #3b4c66;
   }
   .header__langs-container {
     display: flex;
@@ -33,32 +29,26 @@
     cursor: pointer;
   }
   .header__current-lang {
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: 16px;
+    line-height: 24px;
     padding-right: 10px;
   }
   .header__button-lang {
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: 16px;
+    line-height: 24px;
     border: none;
     padding: 0;
     background-color: transparent;
     cursor: pointer;
     margin-right: 1rem;
   }
-  .header__button-lang:hover {
-    border-bottom: 2px solid #3b4c66;
-  }
   .header__lang-wrapper {
     display: flex;
     height: fit-content;
     border-bottom: 2px solid transparent;
   }
-  .header__lang-wrapper:hover {
-    border-bottom: 2px solid #3b4c66;
-  }
   .header__lang-wrapper-icon {
-    width: 1.3rem;
+    width: 20px;
   }
   .header__buttons-container {
     width: 0;
@@ -68,4 +58,23 @@
   .header__buttons-container_visible {
     width: fit-content;
     height: fit-content;
+  }
+  .link_animated {
+    background-image: linear-gradient(
+      transparent 0%,
+      transparent 90%,
+      #3b4c66 90%,
+      #3b4c66 100%
+    ); 
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position-x: right;
+    transition: background-size .3s;
+  }
+  .link_animated:hover {
+    background-size: 100% 100%;
+    background-position-x: left;
+  }
+  .hidden {
+    opacity: 0;
   }

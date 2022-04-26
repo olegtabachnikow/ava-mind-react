@@ -17,10 +17,6 @@
     color: #000;
 }
 
-.content__link:hover {
-    text-decoration: underline;
-}
-
 .content__link-icon {
     width: 20px;
     vertical-align: middle;
