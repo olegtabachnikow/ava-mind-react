@@ -1,24 +1,52 @@
+import React from "react";
 import { translations } from "../contexts/translationContext";
-import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import arrowPath from "../assets/svg/arrow.svg";
 import Checkbox from "./Checkbox";
 import '../css/Content.css';
 import '../css/Condition.css';
 
 
-function Condition({ lang }) {
+function Condition({ lang, onUser }) {
+  let conditions = [];
+  const {
+    register,
+    handleSubmit,
+  } = useForm();
+  const navigate = useNavigate();
+  const onSubmit = (data) => {
+    onUser(data, conditions);
+     navigate("/mail");
+  };
+  function handleChange(evt) {
+    if (evt.target.checked === true) {
+    conditions.push(evt.target.name);
+  } else if (evt.target.checked === false){
+    const result = conditions.filter(function(item) { return item !== evt.target.name });
+    conditions = result;
+  }
+}
   return (
     <div className="condition content">
+      <h2 className="content__title">
+          {translations[lang].conditionTitle}
+      </h2>
       <p className="content__text">{translations[lang].conditionText}</p>
-      <form action="#">
+      <form id="userConditionsForm" onSubmit={handleSubmit(onSubmit)}>
         <div className="condition__checkbox-wrapper">
-            <Checkbox value={translations[lang].conditionFear} />
-            <Checkbox value={translations[lang].conditionBad} />
-            <Checkbox value={translations[lang].conditionTerrible} />
-            <Checkbox value={translations[lang].conditionConfusion} />
-            <Checkbox value={translations[lang].conditionAnxiety} />
-            <Checkbox value={translations[lang].conditionPanic} />
-            <Checkbox value={translations[lang].conditionProductivity} />                      
+            <Checkbox onChange={handleChange} value={translations[lang].conditionFear} condition={'fear'} />
+            <Checkbox onChange={handleChange} value={translations[lang].conditionTired} condition={'tired'}/>
+            <Checkbox onChange={handleChange} value={translations[lang].conditionBad} condition={'feelsBad'}/>
+            <Checkbox onChange={handleChange} value={translations[lang].conditionTerrible} condition={'terribleMood'}/>
+            <Checkbox onChange={handleChange} value={translations[lang].conditionConfusion} condition={'confused'}/>
+            <Checkbox onChange={handleChange} value={translations[lang].conditionAnxiety} condition={'anxiety'}/>
+            <Checkbox onChange={handleChange} value={translations[lang].conditionPanic} condition={'panic'}/>
+            <Checkbox onChange={handleChange} value={translations[lang].conditionProgress} condition={'progress'}/>
+            <Checkbox onChange={handleChange} value={translations[lang].conditionUnderstand} condition={'selfUnderstand'}/>
+            <Checkbox onChange={handleChange} value={translations[lang].conditionRelationship} condition={'relationship'}/>
+            <Checkbox onChange={handleChange} value={translations[lang].conditionProductivity} condition={'productivity'}/>  
+            <Checkbox onChange={handleChange} value={translations[lang].conditionColleagues} condition={'colleagues'}/>                    
         </div>
         <div className="content__input-wrapper">
           <h3 className="content__form-question">
@@ -28,18 +56,19 @@ function Condition({ lang }) {
             className="content__form-input"
             type="text"
             placeholder={translations[lang].conditionPlaceholder}
+            {...register("personalCondition", { required: false })}
           ></input>
         </div>
       </form>
       <div className="next-button__container">
-        <Link className="next-button" to="/mail">
-          <img
-            className="next-button__icon"
-            src={arrowPath}
-            alt="white arrow icon"
-          />
-          <div className="next-button__overlay"></div>
-        </Link>
+      <button form="userConditionsForm" className="next-button">
+            <img
+              className="next-button__icon"
+              src={arrowPath}
+              alt="white arrow icon"
+            />
+            <div className="next-button__overlay"></div>
+          </button>
       </div>
     </div>
   );

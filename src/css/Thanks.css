@@ -1,12 +1,16 @@
 .thanks .content__text {
+    margin: 0;
+}
+.thanks .content__text:first-of-type {
     margin-top: auto;
+}
+.thanks .content__text:nth-child(2) {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    margin: 2.5rem 0;
 }
 .content__link {
     display: inline-block;
     text-decoration: none;
     color: #000;
-}
-
-.content__link:hover {
-    text-decoration: underline;
 }

@@ -1,4 +1,11 @@
-.video .content__text {
+.video {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.video-wrapper {
+    display: flex;
     margin-top: auto;
 }
 .iframe {
@@ -12,11 +19,17 @@
 .video .content__text {
     margin-bottom: 20px;
 }
-
-.section-video__content-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-right: 30px;
-    margin-bottom: auto;
+.video__content-wrapper {
+    padding-top: 10rem;
+   margin-top: auto;
 }
+.video .next-button__container {
+    align-items: center;
+  }
+.next-button__container .content__text {
+    margin: 0 20px 0 0;
+}
+.back-button {
+   width: 92px;
+   height: 92px;
+  }

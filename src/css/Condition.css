@@ -3,12 +3,20 @@
     flex-direction: column;
     justify-content: space-around;
 }
-
-.condition .content__text {
-    margin-top: auto;
+.condition .content__title {
     margin-bottom: 0;
+}
+.condition .content__text {
+    margin: 3rem 0 4rem 0;
 }
 
 .condition .content__input-wrapper {
-    margin-top: 30px;
+    margin-top: 2rem;
+}
+.condition__checkbox-wrapper {
+    max-height: 328px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+     align-items: center;
 }

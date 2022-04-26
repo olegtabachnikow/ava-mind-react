@@ -1,0 +1,38 @@
+@keyframes animatedLogo {
+    0% {
+      fill: #3B4C66;
+    }
+    100% {
+        fill: #fff;
+    }
+}
+@keyframes animatedPreloader {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.preloader {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    animation: animatedPreloader 4s linear forwards;
+}
+.preloader__logo {
+    width: 6.5rem;
+    
+}
+.preloader__logo path {
+    animation: animatedLogo 4s linear forwards;
+}
+.preloader__title {
+    font-size: 3rem;
+}

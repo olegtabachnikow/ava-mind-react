@@ -1,13 +1,18 @@
 import "../css/Checkbox.css";
 
-function Checkbox({ value }) {
+function Checkbox({ value, register, condition, onChange }) {
+  function handleChange(evt) {
+    onChange(evt);
+  }
   return (
         <div className="checkbox">
                   <label className="form__label">
-                    <input
+                    <input onChange={handleChange}
+                      name={condition}
                       className="section-stances__input"
                       type="checkbox"                      
                       value={value}
+                      {...register}
                     />
                     <span className="checkbox-box">
                       <span className="checkbox-title">
