@@ -22,20 +22,19 @@ function App() {
   const [lang, setLang] = React.useState("ru");
   const [currentUserName, setCurrentUserName] = React.useState('');
   const [currentUserJob, setCurrentUserJob] = React.useState('');
-  const [currentUserCondition, setCurrentUserCondition] = React.useState('');
+  const [currentUserConditions, setCurrentUserConditions] = React.useState('');
+  const [currentPersonalCondition, setCurrentPersonalCondition] = React.useState('');
   const [currentUserMail, setCurrentUserMail] = React.useState('');
   const [isActive, setIsActive] = React.useState(false);
-  React.useEffect(() => {
-    console.log(currentUserName);
-  },[currentUserName]);
-
+  
   function handleActiveStance(data) {
     setIsActive(data);
   }
   const currentUserData = {
     name: currentUserName,
     job: currentUserJob,
-    condition: currentUserCondition,
+    conditions: currentUserConditions,
+    userCondition: currentPersonalCondition,
     email: currentUserMail
   };
  
@@ -45,17 +44,15 @@ function App() {
 
   function handleUserJob(data) {
     setCurrentUserJob(data);
-    console.log(currentUserJob);
   }
 
-  function handleUserCondition(data) {
-    setCurrentUserCondition(data);
-    console.log(currentUserCondition);
+  function handleUserCondition(data, conditions) {
+    setCurrentUserConditions(conditions);
+    setCurrentPersonalCondition(data);
   }
 
   function handleUserMail(data) {
     setCurrentUserMail(data);
-    console.log(currentUserMail);
   }
 
   function handleCurrentLanguage(current) {
@@ -79,7 +76,7 @@ function App() {
               <Route path="/condition" element={<Condition lang={lang} onUser={handleUserCondition}/>} />
               <Route path="/mail" element={<Mail lang={lang} currentUser={currentUserName} 
               onUser={handleUserMail} data={currentUserData} />} />
-              <Route path="/thanks" element={<Thanks lang={lang} currentUser={currentUserName} />} />
+              <Route path="/thanks" element={<Thanks lang={lang} currentUser={currentUserData} />} />
               <Route path="/video" element={<Video lang={lang} currentUser={currentUserName}/>} />
               <Route path="/contacts" element={<Contacts lang={lang} setActiveStance={handleActiveStance}/>} />
             </Routes>

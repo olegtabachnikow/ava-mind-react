@@ -1,15 +1,29 @@
+import React from "react";
 import { translations } from "../contexts/translationContext";
 import { Link } from "react-router-dom";
 import arrowPath from "../assets/svg/arrow.svg";
 import '../css/Content.css';
 import '../css/Thanks.css';
+import api from "../utils/api";
 
 function Thanks({ lang, currentUser}) {
+  React.useEffect(()=> {
+    let dataToSend = JSON.stringify(currentUser);
+    console.log(dataToSend);
+    api.sendUserData(dataToSend)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },[]);
+ 
   return (
     <div className="thanks content">
       <p className="content__text">
         {translations[lang].thanksTitle}
-        <span className="user-name">{currentUser}</span>
+        <span className="user-name">{currentUser.name}</span>
         {translations[lang].thanksExclamation}
         {translations[lang].thanksTextStart}
       </p>

@@ -20,7 +20,6 @@ function Intro({ lang, onUser }) {
       <p className="content__text">{translations[lang].introText}</p>
       <form
         id="userNameForm"
-        action="/greetings"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="content__input-wrapper content__input-wrapper_type_intro">
@@ -36,13 +35,13 @@ function Intro({ lang, onUser }) {
         </div>
       </form>
       <div className="next-button__container">
-          <button form="userNameForm" className="next-button" to={"/greetings"}>
+          <button form="userNameForm" className="next-button">
             <img
               className="next-button__icon"
               src={arrowPath}
               alt="white arrow icon"
             />
-            <div type="submit" className="next-button__overlay"></div>
+            <div className="next-button__overlay"></div>
           </button>
         </div>
     </div>

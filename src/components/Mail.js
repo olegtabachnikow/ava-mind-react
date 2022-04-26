@@ -1,47 +1,18 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { translations } from "../contexts/translationContext";
-import { Link } from "react-router-dom";
 import arrowPath from "../assets/svg/arrow.svg";
 import '../css/Content.css';
 import '../css/Mail.css';
-import telegram from "../assets/svg/contacts_telegram.svg";
 
-function Mail({ lang, onUser, currentUser, data }) {
-
-  const [userMail, setUserMail] = React.useState('');
-
-  const sendUserData = (data) => {
-    return fetch("https://avamind-core.herokuapp.com/api/v1/user", {
-      method: "POST",
-      headers: {
-        accept: "*/*",
-        "Content-Type": "application/json",
-      },
-      body: data,
-    });
+function Mail({ lang, onUser, currentUser }) {
+  const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
+  const onSubmit = (data) => {
+    onUser(data.email);
+    navigate("/thanks");
   };
-
-  function handleUserData(data) {
-    let dataToSend = JSON.stringify(data);
-    console.log(dataToSend);
-    sendUserData(dataToSend)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-      console.log(dataToSend);
-  }
-
-  function handleChange(evt) {
-    setUserMail(evt.target.value);
-  }
-  function handleClick() {
-    onUser(userMail);
-    handleUserData(data);
-  }
-
   return (
     <div className="mail content">
       <p className="content__text">
@@ -60,27 +31,26 @@ function Mail({ lang, onUser, currentUser, data }) {
         <p className="content__text">
           {translations[lang].mailTextEnd}
         </p>
-      <form action="#">
+      <form id="userEmailForm"  onSubmit={handleSubmit(onSubmit)}>
         <div className="content__input-wrapper content__input-wrapper_type_intro">
           <input
-            onChange={handleChange}
             className="content__form-input email-form-input"
             type="email"
-            required
             placeholder={translations[lang].mailPlaceholder}
+            {...register("email", { required: true, pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}
           ></input>
           <span className="content__error-message"></span>
         </div>
       </form>
       <div className="next-button__container">
-        <Link className="next-button" to="/thanks" onClick={handleClick}>
-          <img
-            className="next-button__icon"
-            src={arrowPath}
-            alt="white arrow icon"
-          />
-          <div className="next-button__overlay"></div>
-        </Link>
+      <button form="userEmailForm" className="next-button">
+            <img
+              className="next-button__icon"
+              src={arrowPath}
+              alt="white arrow icon"
+            />
+            <div className="next-button__overlay"></div>
+          </button>
       </div>
     </div>
   );
