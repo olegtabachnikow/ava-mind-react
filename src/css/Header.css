@@ -71,6 +71,14 @@
     background-position-x: right;
     transition: background-size .3s;
   }
+  .header .link_animated {
+      background-image: linear-gradient(
+        transparent 0%,
+        transparent 95%,
+        #3b4c66 95%,
+        #3b4c66 100%
+      ); 
+  }
   .link_animated:hover {
     background-size: 100% 100%;
     background-position-x: left;

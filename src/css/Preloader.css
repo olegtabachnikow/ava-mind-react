@@ -10,7 +10,7 @@
     0% {
         opacity: 1;
     }
-    90% {
+    80% {
         opacity: 1;
     }
     100% {
@@ -24,15 +24,16 @@
     align-items: center;
     justify-content: center;
     opacity: 1;
-    animation: animatedPreloader 4s linear forwards;
+    animation: animatedPreloader 5s linear forwards;
 }
 .preloader__logo {
     width: 6.5rem;
     
 }
 .preloader__logo path {
-    animation: animatedLogo 4s linear forwards;
+    animation: animatedLogo 2.5s linear forwards;
 }
 .preloader__title {
     font-size: 3rem;
+    font-weight: 400;
 }
