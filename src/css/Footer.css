@@ -29,3 +29,8 @@
   .hidden {
     opacity: 0;
   }
+  @media screen and (max-width: 428px) {
+    .footer {
+      display: none;
+    }
+  }

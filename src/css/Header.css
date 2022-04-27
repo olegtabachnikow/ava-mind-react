@@ -6,16 +6,18 @@
   }
   .header__logo-wrapper {
     display: flex;
-    align-items: baseline;
-    margin: 5.5vh 0 0 0;
+    align-items: center;
+    margin: 5.5vh 0 0 1rem;
+    position: relative;
+    z-index: 5;
   }
   .header__logo {
-    height: 28px;
+    height: 20px;
   }
   .header__logo-text {
-    font-size: 32px;
+    font-size: 20px;
     line-height: 32px;
-    margin: 0 0 0 20px;
+    margin: 0 0 0 15px;
   }
   .header__logo-wrapper {
     text-decoration: none;
@@ -86,3 +88,25 @@
   .hidden {
     opacity: 0;
   }
+
+  @media screen and (max-width: 1023px) {
+    .header {
+      padding: 0 5vw 0 3vw;
+  }
+}
+@media screen and (max-width: 428px) {
+  .header {
+    height: 5%;
+  }
+}
+@media screen and (max-width: 428px) {
+  .header__logo-wrapper {
+    margin-top: 2rem;
+  }
+}
+@media screen and (max-width: 428px) {
+  .header__langs-container {
+    display: none;
+  }
+}
+

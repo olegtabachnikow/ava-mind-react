@@ -1,5 +1,5 @@
 import presentation from "../assets/svg/presentation.svg";
-import contactsWhite from "../assets/svg/contactsWhite.svg"
+import contactsWhite from "../assets/svg/contactsWhite.svg";
 import contacts from "../assets/svg/contacts.svg";
 import telegram from "../assets/svg/contacts_telegram.svg";
 import React from "react";

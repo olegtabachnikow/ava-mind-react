@@ -11,7 +11,12 @@
     font-size: 12px;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-height: 700px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 428px) {
   html {
     font-size: 10px;
   }

@@ -1,11 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Preloader.css";
-function Preloader({onHide}) {
+function Preloader() {
   const navigate = useNavigate();
   React.useEffect(() => {
     setTimeout(() => {
-      onHide(false);
       navigate("/intro");
     }, 5000);
   }, []);

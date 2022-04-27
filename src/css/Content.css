@@ -101,3 +101,48 @@
 .next-button:active .next-button__icon {
   filter: invert(28%) sepia(31%) saturate(497%) hue-rotate(177deg) brightness(54%) contrast(97%);
 }
+@media screen and (max-width: 1023px) {
+  .content__form-input {
+    max-width: 40%;
+    font-size: 2.2rem;
+}
+}
+@media screen and (max-width: 428px) {
+  .next-button{
+    width: 6rem;
+    height: 6rem;
+  }
+}
+@media screen and (max-width: 428px) {
+  .next-button__overlay{
+    width: 6rem;
+    height: 6rem;
+  }
+}
+@media screen and (max-width: 428px) {
+  .content__title {
+     font-size: 3rem;
+     line-height: 3.5rem;
+     width: 90%;
+  }
+}
+@media screen and (max-width: 428px) {
+  .content__text {
+     font-size: 2rem;
+     line-height: 3rem;
+     padding: 0;
+  }
+}
+@media screen and (max-width: 428px) {
+  .content__form-question {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+}
+@media screen and (max-width: 428px) {
+  .content__form-input {
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+}
+
