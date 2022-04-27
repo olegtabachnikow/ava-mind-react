@@ -6,18 +6,24 @@ import '../css/Content.css';
 import '../css/Thanks.css';
 import api from "../utils/api";
 
-function Thanks({ lang, currentUser}) {
+function Thanks({ lang, currentUser, isSent, handleDataSend}) {
   React.useEffect(()=> {
+    if (!isSent) {
     let dataToSend = JSON.stringify(currentUser);
     console.log(dataToSend);
     api.sendUserData(dataToSend)
       .then((res) => {
+        handleDataSend(true);
         console.log(res);
       })
       .catch((err) => {
+        handleDataSend(true);
         console.log(err);
       });
-  },[]);
+    } else {
+     console.log("Is data sent already? "+ isSent);
+    }
+  },[handleDataSend, currentUser, isSent]);
  
   return (
     <div className="thanks content">

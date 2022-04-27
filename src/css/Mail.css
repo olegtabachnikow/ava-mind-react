@@ -9,7 +9,7 @@
   font-weight: normal;
 }
 .mail .next-button__container {
-  margin-top: 0;
+  margin-top: auto;
 }
 .content__link {
     display: inline-block;
@@ -20,4 +20,9 @@
 .content__link-icon {
     width: 20px;
     vertical-align: middle;
+  }
+  @media screen and (max-width: 428px) {
+    .mail .content__text {
+       padding: 0;
+    }
   }

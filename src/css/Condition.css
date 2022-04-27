@@ -20,3 +20,48 @@
     flex-wrap: wrap;
      align-items: center;
 }
+@media screen and (max-width: 1023px) {
+    .condition .content__text {
+      margin: 3rem 0 1rem 0;
+    }
+  }
+  @media screen and (max-width: 1023px) {
+    .content__input-wrapper  {
+     flex-direction: column;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .content__form-question  {
+   margin-bottom: 1rem;
+}
+}
+
+
+@media screen and (max-width: 428px) {
+  .condition__checkbox-wrapper {
+     max-height: 50%;
+     overflow: scroll;
+     border-radius: 25px;
+     box-shadow: inset -2px 5px 15px -1px rgba(0,0,0,0.62);
+  }
+}
+@media screen and (max-width: 428px) {
+  .condition {
+     justify-content: space-between;
+  }
+}
+@media screen and (max-width: 428px) {
+  .condition .content__title {
+     margin-top: 10%;
+  }
+}
+@media screen and (max-width: 428px) {
+  .condition__form {
+     height: 48%;
+  }
+}
+@media screen and (max-width: 428px) {
+  .condition .next-button__container {
+     margin-top: 0;
+  }
+}

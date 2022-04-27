@@ -1,3 +1,8 @@
 .intro .content__text {
     padding-right: 150px;
 }
+@media screen and (max-width: 428px) {
+       .intro .content__text {
+           padding: 0;
+       }
+  }

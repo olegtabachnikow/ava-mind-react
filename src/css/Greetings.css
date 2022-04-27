@@ -7,3 +7,8 @@
 .content__input-wrapper_type_greetings {
     flex-direction: column;
 }
+@media screen and (max-width: 428px) {
+    .greetings .content__text {
+       padding: 0;
+    }
+  }

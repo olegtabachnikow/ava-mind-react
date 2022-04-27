@@ -1,25 +1,13 @@
 import languagesPath from "../assets/svg/language.svg";
 import React from "react";
 
-function LanguageChange({ onChange, currentLang }) {
-  const [lang, setLang] = React.useState("ru");
+function LanguageChange({ onLang, currentLangCode }) {
   const [isVisible, setIsVisible] = React.useState(false);
-  React.useEffect(() => {
-    onChange(lang);
-  });
   function handleLangsVisibility() {
     setIsVisible(!isVisible);
   }
-  function handleCurrentLangEn() {
-    setLang("en");
-    setIsVisible(!isVisible);
-  }
-  function handleCurrentLangRu() {
-    setLang("ru");
-    setIsVisible(!isVisible);
-  }
-  function handleCurrentLangUk() {
-    setLang("uk");
+  function handleCurrentLang(evt) {
+    onLang(evt.target.name);
     setIsVisible(!isVisible);
   }
   return (
@@ -30,26 +18,29 @@ function LanguageChange({ onChange, currentLang }) {
         }`}
       >
         <button
-          onClick={handleCurrentLangEn}
+        name="en"
+          onClick={handleCurrentLang}
           className="header__button-lang link_animated header__button-lang_value_en"
         >
           En
         </button>
         <button
-          onClick={handleCurrentLangRu}
+        name="ru"
+          onClick={handleCurrentLang}
           className="header__button-lang link_animated header__button-lang_value_ru"
         >
           Ru
         </button>
         <button
-          onClick={handleCurrentLangUk}
+        name="uk"
+          onClick={handleCurrentLang}
           className="header__button-lang link_animated header__button-lang_value_uk"
         >
           Uk
         </button>
       </div>
       <div className="header__lang-wrapper link_animated" onClick={handleLangsVisibility}>
-        <span className="header__current-lang">{currentLang}</span>
+        <span className="header__current-lang">{currentLangCode}</span>
         <img
           className="header__lang-wrapper-icon"
           src={languagesPath}

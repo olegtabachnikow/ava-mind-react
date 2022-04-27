@@ -12,7 +12,7 @@ function Video({ lang, currentUser }) {
           <p className="content__title">{translations[lang].videoTitle}</p>
           <iframe
                     className="iframe"
-                    src="https://www.youtube.com/embed/iLd4t8dVJD8"
+                    src={translations[lang].videoUrl}
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -25,7 +25,7 @@ function Video({ lang, currentUser }) {
         </div> 
       </div>
       <div className="next-button__container">  
-        <p className="content__text">{translations[lang].videoBack}</p>      
+        <p className="content__text">{translations[lang].turnBackButton}</p>      
         <Link className="next-button back-button" to="/thanks">
           <img
             className="next-button__icon"

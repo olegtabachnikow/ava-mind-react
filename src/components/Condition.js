@@ -33,20 +33,14 @@ function Condition({ lang, onUser }) {
           {translations[lang].conditionTitle}
       </h2>
       <p className="content__text">{translations[lang].conditionText}</p>
-      <form id="userConditionsForm" onSubmit={handleSubmit(onSubmit)}>
+      <form className="condition__form" id="userConditionsForm" onSubmit={handleSubmit(onSubmit)}>
         <div className="condition__checkbox-wrapper">
             <Checkbox onChange={handleChange} value={translations[lang].conditionFear} condition={'fear'} />
-            <Checkbox onChange={handleChange} value={translations[lang].conditionTired} condition={'tired'}/>
             <Checkbox onChange={handleChange} value={translations[lang].conditionBad} condition={'feelsBad'}/>
             <Checkbox onChange={handleChange} value={translations[lang].conditionTerrible} condition={'terribleMood'}/>
             <Checkbox onChange={handleChange} value={translations[lang].conditionConfusion} condition={'confused'}/>
             <Checkbox onChange={handleChange} value={translations[lang].conditionAnxiety} condition={'anxiety'}/>
             <Checkbox onChange={handleChange} value={translations[lang].conditionPanic} condition={'panic'}/>
-            <Checkbox onChange={handleChange} value={translations[lang].conditionProgress} condition={'progress'}/>
-            <Checkbox onChange={handleChange} value={translations[lang].conditionUnderstand} condition={'selfUnderstand'}/>
-            <Checkbox onChange={handleChange} value={translations[lang].conditionRelationship} condition={'relationship'}/>
-            <Checkbox onChange={handleChange} value={translations[lang].conditionProductivity} condition={'productivity'}/>  
-            <Checkbox onChange={handleChange} value={translations[lang].conditionColleagues} condition={'colleagues'}/>                    
         </div>
         <div className="content__input-wrapper">
           <h3 className="content__form-question">
