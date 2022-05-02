@@ -18,9 +18,10 @@ import Video from "./Video";
 import Footer from "./Footer";
 import Contacts from "./Contacts";
 import Popup from "./Popup";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
-  const [lang, setLang] = React.useState("ru");
+  const [lang, setLang] = React.useState("en");
   const [currentUserName, setCurrentUserName] = React.useState("");
   const [currentUserJob, setCurrentUserJob] = React.useState("");
   const [currentUserConditions, setCurrentUserConditions] = React.useState("");
@@ -34,11 +35,13 @@ function App() {
   React.useEffect(() => {
     setLang(lang);
   },[lang]);
+
   React.useEffect(()=> {
     setTimeout(() => {
       setIsHidden(false);
     }, 5000);
   })
+
   function handleOpenPopup(data) {
     setIsPopupOpened(data);
   }
@@ -51,8 +54,8 @@ function App() {
   const currentUserData = {
     name: currentUserName,
     job: currentUserJob,
-    conditions: currentUserConditions,
-    userCondition: currentPersonalCondition,
+    stances: currentUserConditions,
+    userStance: currentPersonalCondition,
     email: currentUserMail,
   };
 
@@ -81,11 +84,11 @@ function App() {
     <div className="page">
       <TranslationContext.Provider value={translations[lang]}>
         <HashRouter>
+        <ScrollToTop/>
         <Popup onLang={handleCurrentLanguage} isPopupOpened={isPopupOpened} currentLanguage={lang} onClose={handleOpenPopup}/>
           <Header isHidden={isHidden} handlePopup={handleOpenPopup} isPopupOpened={isPopupOpened}>
             <LanguageChange
               onLang={handleCurrentLanguage}
-              currentLangCode={translations[lang].currentLang}
             />
           </Header>
           <Section>

@@ -1,7 +1,7 @@
 import languagesPath from "../assets/svg/language.svg";
 import React from "react";
 
-function LanguageChange({ onLang, currentLangCode }) {
+function LanguageChange({ onLang }) {
   const [isVisible, setIsVisible] = React.useState(false);
   function handleLangsVisibility() {
     setIsVisible(!isVisible);
@@ -40,7 +40,6 @@ function LanguageChange({ onLang, currentLangCode }) {
         </button>
       </div>
       <div className="header__lang-wrapper link_animated" onClick={handleLangsVisibility}>
-        <span className="header__current-lang">{currentLangCode}</span>
         <img
           className="header__lang-wrapper-icon"
           src={languagesPath}

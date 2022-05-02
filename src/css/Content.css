@@ -38,6 +38,7 @@
   box-shadow: 0px 20px 60px #c9d8ff;
   padding: 1rem 1.5rem;
   transition: box-shadow 0.2s linear;
+  -webkit-appearance: none;
 }
 .content__form-input:hover {
   box-shadow: 0px 20px 60px #96b3ff;
@@ -114,6 +115,11 @@
   }
 }
 @media screen and (max-width: 428px) {
+  .next-button__container {
+  margin-top: 2rem;
+  }
+}
+@media screen and (max-width: 428px) {
   .next-button__overlay{
     width: 6rem;
     height: 6rem;
@@ -142,7 +148,29 @@
 @media screen and (max-width: 428px) {
   .content__form-input {
     max-width: 100%;
-    margin-top: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0px 20px 60px #96b3ff;
+    -webkit-box-shadow: 0px 20px 60px #96b3ff;
   }
 }
 
+@media screen and (max-width: 428px) {
+  .content {
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+  }
+}
+@media screen and (max-width: 428px) {
+  .next-button__overlay {
+    background: radial-gradient(#F5AE9D, transparent);
+    background-position-y: bottom;
+    border: 2px solid #fff;
+    box-shadow: 0px 20px 60px #F5AE9D;
+  }
+}
+@media screen and (max-width: 428px) {
+  .back-button_blue {
+    box-shadow: 0px 20px 60px #96b3ff;
+    background: radial-gradient(#96b3ff, transparent);
+  }
+}

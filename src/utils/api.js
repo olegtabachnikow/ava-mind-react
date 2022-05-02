@@ -1,4 +1,5 @@
 import React from "react";
+let API_HOST;
 class Api extends React.Component {
     constructor(props) {
         super(props);
@@ -14,7 +15,7 @@ class Api extends React.Component {
       };
 } 
 const api = new Api({
-    baseUrl: "https://avamind-core.herokuapp.com/api/v1/user",
+    baseUrl: `${API_HOST}/ui-api-web/v1/user`,
     headers: {
         accept: "*/*",
         "Content-Type": "application/json",

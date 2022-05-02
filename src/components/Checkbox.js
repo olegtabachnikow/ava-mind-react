@@ -6,20 +6,20 @@ function Checkbox({ value, register, condition, onChange }) {
   }
   return (
         <div className="checkbox">
-                  <label className="form__label">
+                  <label className="checkbox__label">
                     <input onChange={handleChange}
                       name={condition}
-                      className="section-stances__input"
+                      className="checkbox__input"
                       type="checkbox"                      
                       value={value}
                       {...register}
                     />
-                    <span className="checkbox-box">
-                      <span className="checkbox-title">
-                        <span>{value}</span>
+                    <span className="checkbox__box">
+                      <span className="checkbox__title">
+                        <span className="checkbox__title-span">{value}</span>
                       </span>
-                      <span className="checkbox-ripple">
-                        <span></span>
+                      <span className="checkbox__ripple">
+                        <span className="checkbox__ripple-span"></span>
                       </span>
                     </span>
                   </label>

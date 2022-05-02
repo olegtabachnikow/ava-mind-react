@@ -61,10 +61,12 @@
         height: 52px;
        }
 }
-.iframe {
-    width: 95%;
-    height: auto;
-    border-radius: 20px;
-    border: none;
-    margin: 2rem 3.2rem 0 0px;
+@media screen and (max-width: 428px) {
+        .iframe {
+            width: 95%;
+            height: auto;
+            border-radius: 20px;
+            border: none;
+            margin: 2rem 3.2rem 0 0px;
+        }
 }
