@@ -153,7 +153,7 @@ function Contacts({ lang, setActiveStance }) {
     </div>
     <div className="next-button__container">  
     <p className="content__text">{translations[lang].turnBackButton}</p>      
-    <Link className="next-button back-button" onClick={handleClick} to="">
+    <Link className="next-button back-button back-button_blue" onClick={handleClick} to="">
       <img
         className="next-button__icon"
         src={arrowPath}

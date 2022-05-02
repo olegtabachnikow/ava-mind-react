@@ -1,7 +1,10 @@
 @import url(../src/vendor/normalize.css);
 @import url(../src/fonts/NeueHaasUnica-Regular/style.css);
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
-
+a:visited {
+  text-decoration: none;
+  outline: none;
+}
 * {
   box-sizing: border-box;
   outline: none;

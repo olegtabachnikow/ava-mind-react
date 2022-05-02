@@ -1,5 +1,5 @@
 .popup {
-  position: absolute;
+  position: fixed;
   background: rgba(255, 255, 255, 0.9);
   width: 100%;
   height: 0;
@@ -52,12 +52,15 @@
     font-size: 2rem;
     border: none;
     background-color: transparent;
+    color:#3b4c66;
 }
 .popup__button {
     display: none;
+    width: 5rem;
+    height: 5rem;
     border: none;
     position: absolute;
-    right: 4rem;
+    right: 1rem;
     top: 3rem;
     z-index: 5;
     background-color: transparent;
@@ -90,8 +93,8 @@
     top: 0;
 }
 .popup_active {
-    height: 100%;
-    padding: 0 25% 15% 0;
+    height: 100vh;
+    padding: 0 25% 30% 0;
 }
 @media screen and (max-width: 428px) {
     .popup__button {
@@ -99,3 +102,6 @@
     }
   }
   .popup__header {margin-top: 5%;}
+  .popup__button-lang_active {
+      text-decoration: underline;
+  }

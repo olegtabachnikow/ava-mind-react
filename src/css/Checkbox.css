@@ -11,15 +11,18 @@
     height: 52px;
     box-shadow: 0px 20px 60px #FFC3B0;
     transition: box-shadow 0.2s linear;
+    -webkit-transition: box-shadow 0.2s linear;
+    overflow: hidden;
 }
 .checkbox:hover {
     box-shadow: 0px 20px 60px #F5AE9D;
 }
-.checkbox label {
+.checkbox__label {
     cursor: pointer;
 }
 
-.checkbox label>input {
+.checkbox__input {
+    -webkit-appearance: none;
     appearance: none;
     margin: 0;
     opacity: 0;
@@ -28,8 +31,7 @@
     visibility: hidden;
 }
 
-.checkbox-box {
-    border: 1px #3B4C66;
+.checkbox__box {
     align-items: center;
     background: #FFFFFF;
     border-radius: 68px;
@@ -40,67 +42,58 @@
     overflow: hidden;
     padding: 0 22px;
     position: relative;
-    transition: opacity 0.4s ease 0s;
     user-select: none;
 }
 
-.checkbox-title {
+.checkbox__title {
     display: block;
     overflow: hidden;
     position: relative;
-    z-index: 10;
+    z-index: 2;
 }
 
-.checkbox-ripple {
+.checkbox__ripple {
     border-radius: 68px;
     display: block;
     inset: 0;
     overflow: hidden;
     position: absolute;
     transform: translateZ(0px);
+    -webkit-transform: translateZ(0px);
     z-index: 1;
     box-shadow: none;
 }
 
 
 
-.checkbox-ripple span {
+.checkbox__ripple-span {
     background: #F5AE9D;
-    border-radius: 50%;
+    border-radius: 68px;
+    -webkit-border-radius: 50%;
     display: block;
     height: 100%;
+    -webkit-height: 100%;
     transform: translateY(100%) translateZ(0px);
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1) 0s, border-radius 0.5s cubic-bezier(0.4, 0, 0, 1) 0s;
+    -webkit-transform: translateY(100%) translateZ(0px);
+    transition: all 0.3s linear 0s;
+    -webkit-transition: all 0.3s linear 0s;
     width: 100%;
 }
 
-.checkbox label>input:checked~.checkbox-box .checkbox-ripple span {
+.checkbox__input:checked~.checkbox__box .checkbox__ripple-span {
     border-radius: 0;
     transform: translateY(0) translateZ(0);
+    -webkit-transform: translateY(0) translateZ(0);
 }
 
-.checkbox label>input:checked~.checkbox-box .checkbox-title span {
+.checkbox__input:checked~.checkbox__box .checkbox__title-span {
     color: #fff;
-    z-index: 10;
+    z-index: 2;
 }
-.condition__shadow-box {
-    position: absolute;
-    top:0;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-}
-
   @media screen and (max-width: 428px) {
     .checkbox {
        width: 100%;
        margin: .5rem 0 .5rem 0;
-       box-shadow: none;
+       box-shadow: 0px 20px 60px #F5AE9D;
     }
-    .checkbox:first-of-type {
-        margin-top: 0;
-     }
-     .checkbox:last-of-type {
-        margin-bottom: 0;
-     }
-  }
+}

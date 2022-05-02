@@ -20,7 +20,7 @@ function Popup({ currentLanguage, onLang, isPopupOpened, onClose }) {
     <div className={`popup ${isPopupOpened && "popup_active"}`}>
         <div className="popup__header"></div>
       <nav className="popup__navbar">
-        <Link className="popup__link" to="/intro">
+        <Link className="popup__link" to="/intro" onClick={handleClick}>
           <img
             className="popup__link-icon"
             src={chatIcon}
@@ -79,21 +79,21 @@ function Popup({ currentLanguage, onLang, isPopupOpened, onClose }) {
         <button
          name="en"
           onClick={handleCurrentLang}
-          className="popup__button-lang"
+          className={`popup__button-lang ${currentLanguage === "en" && "popup__button-lang_active"}`}
         >
           En
         </button>
         <button
         name="ru"
           onClick={handleCurrentLang}
-          className="popup__button-lang"
+          className={`popup__button-lang ${currentLanguage === "ru" && "popup__button-lang_active"}`}
         >
           Ru
         </button>
         <button
         name="uk"
           onClick={handleCurrentLang}
-          className="popup__button-lang"
+          className={`popup__button-lang ${currentLanguage === "uk" && "popup__button-lang_active"}`}
         >
           Uk
         </button>

@@ -20,6 +20,7 @@
   }
   @media screen and (max-width: 428px) {
     .section {
-height: 90%;
+      width: 86%;
+      margin: auto 7%;
     }
   }

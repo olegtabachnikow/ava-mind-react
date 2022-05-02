@@ -16,7 +16,7 @@ function Condition({ lang, onUser }) {
   } = useForm();
   const navigate = useNavigate();
   const onSubmit = (data) => {
-    onUser(data, conditions);
+    onUser(data.personalCondition, conditions);
      navigate("/mail");
   };
   function handleChange(evt) {

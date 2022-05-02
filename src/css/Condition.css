@@ -39,10 +39,7 @@
 
 @media screen and (max-width: 428px) {
   .condition__checkbox-wrapper {
-     max-height: 50%;
-     overflow: scroll;
-     border-radius: 25px;
-     box-shadow: inset -2px 5px 15px -1px rgba(0,0,0,0.62);
+     max-height: fit-content;
   }
 }
 @media screen and (max-width: 428px) {

@@ -9,4 +9,16 @@
     -moz-osx-font-smoothing: grayscale;
     color: #3b4c66;
     overflow: hidden;
+    -webkit-appearance:none;
   }
+  @media screen and (max-width: 428px) {
+    .page {
+        overflow-y: scroll;
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+       }
+}

@@ -17,8 +17,9 @@
         opacity: 0;
     }
 }
+
 .preloader {
-    height: 100%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
