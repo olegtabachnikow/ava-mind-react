@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/AVA-Mind-React/static/css/main.8bf44f91.css",
-    "main.js": "/AVA-Mind-React/static/js/main.370efa3a.js",
+    "main.css": "/AVA-Mind-React/static/css/main.f8738a26.css",
+    "main.js": "/AVA-Mind-React/static/js/main.ae36c95a.js",
     "static/js/787.3a3bbdee.chunk.js": "/AVA-Mind-React/static/js/787.3a3bbdee.chunk.js",
     "static/media/background-1.jpg": "/AVA-Mind-React/static/media/background-1.652f69b14f1f0b329226.jpg",
     "static/media/NeueHaasUnica-Regular.ttf": "/AVA-Mind-React/static/media/NeueHaasUnica-Regular.7192019b67a9fda3412c.ttf",
@@ -22,12 +22,12 @@
     "index.html": "/AVA-Mind-React/index.html",
     "static/media/arrow_back.svg": "/AVA-Mind-React/static/media/arrow_back.e4d9339c7d781692cdf1a749043c0dc6.svg",
     "static/media/arrow.svg": "/AVA-Mind-React/static/media/arrow.d82435abf5ec1f7aed414eb69c7a16c8.svg",
-    "main.8bf44f91.css.map": "/AVA-Mind-React/static/css/main.8bf44f91.css.map",
-    "main.370efa3a.js.map": "/AVA-Mind-React/static/js/main.370efa3a.js.map",
+    "main.f8738a26.css.map": "/AVA-Mind-React/static/css/main.f8738a26.css.map",
+    "main.ae36c95a.js.map": "/AVA-Mind-React/static/js/main.ae36c95a.js.map",
     "787.3a3bbdee.chunk.js.map": "/AVA-Mind-React/static/js/787.3a3bbdee.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8bf44f91.css",
-    "static/js/main.370efa3a.js"
+    "static/css/main.f8738a26.css",
+    "static/js/main.ae36c95a.js"
   ]
 }
