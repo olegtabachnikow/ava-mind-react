@@ -7,12 +7,12 @@ import { NavLink } from "react-router-dom";
 import { translations } from "../contexts/translationContext";
 import "../css/Footer.css";
 
-function Footer({ lang, isActive, isHidden }) { 
+function Footer({ lang, isActive, isHidden }) {
   return (
     <nav className={`footer ${isHidden && "hidden"}`}>
       <a
         className="footer__link link_animated"
-        href="https://drive.google.com/file/d/1pJOOJldevCgjPEjIRQGN4d_tk-xf_SoR/view"
+        href="https://drive.google.com/file/d/1ZBydUl-q4x7fMlHGT-KXoW5gMaLak_IO/view?usp=sharing"
         target="_blank"
         rel="noreferrer"
       >
@@ -31,7 +31,13 @@ function Footer({ lang, isActive, isHidden }) {
           src={isActive ? contactsWhite : contacts}
           alt="ava mind contacts"
         />
-        <p className={`footer__link-text ${isActive ? "footer__link_active" : ""}`}>{translations[lang].footerContacts}</p>
+        <p
+          className={`footer__link-text ${
+            isActive ? "footer__link_active" : ""
+          }`}
+        >
+          {translations[lang].footerContacts}
+        </p>
       </NavLink>
       <a
         className="footer__link link_animated"

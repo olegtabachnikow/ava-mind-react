@@ -2,8 +2,7 @@
     width: 100vw;
     height: 100vh;
     position: relative;
-    background-image: url(../assets/images/background-1.jpg);
-    background-size: cover;
+    background-size: 110% 110%;
     font-family: "Neue Haas Unica", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -15,8 +14,7 @@
     .page {
         overflow-y: scroll;
         min-height: 100vh;
-        min-height: -webkit-fill-available;
-        height: 100%;
+        height: -webkit-fill-available;
         display: flex;
         flex-direction: column;
         justify-content: space-between;

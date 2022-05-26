@@ -9,16 +9,16 @@ import languagesPath from "../assets/svg/language.svg";
 import "../css/Popup.css";
 
 function Popup({ currentLanguage, onLang, isPopupOpened, onClose }) {
-    function handleCurrentLang(evt) {
-        onLang(evt.target.name);
-        onClose(false);
-    }
-    function handleClick() {
-        onClose(false);
-    }
+  function handleCurrentLang(evt) {
+    onLang(evt.target.name);
+    onClose(false);
+  }
+  function handleClick() {
+    onClose(false);
+  }
   return (
     <div className={`popup ${isPopupOpened && "popup_active"}`}>
-        <div className="popup__header"></div>
+      <div className="popup__header"></div>
       <nav className="popup__navbar">
         <Link className="popup__link" to="/intro" onClick={handleClick}>
           <img
@@ -26,11 +26,13 @@ function Popup({ currentLanguage, onLang, isPopupOpened, onClose }) {
             src={chatIcon}
             alt="ava mind chat icon"
           />
-          <p className="popup__link-text">{translations[currentLanguage].popupMainPage}</p>
+          <p className="popup__link-text">
+            {translations[currentLanguage].popupMainPage}
+          </p>
         </Link>
         <a
           className="popup__link"
-          href="https://drive.google.com/file/d/1pJOOJldevCgjPEjIRQGN4d_tk-xf_SoR/view"
+          href="https://drive.google.com/file/d/1ZBydUl-q4x7fMlHGT-KXoW5gMaLak_IO/view?usp=sharing"
           target="_blank"
           rel="noreferrer"
         >
@@ -70,33 +72,39 @@ function Popup({ currentLanguage, onLang, isPopupOpened, onClose }) {
         </a>
       </nav>
       <div className="popup__languages-container">
-      <img
+        <img
           className="popup__link-icon"
           src={languagesPath}
           alt="languages selection icon"
         />
         <div className="popup__language-select">
-        <button
-         name="en"
-          onClick={handleCurrentLang}
-          className={`popup__button-lang ${currentLanguage === "en" && "popup__button-lang_active"}`}
-        >
-          En
-        </button>
-        <button
-        name="ru"
-          onClick={handleCurrentLang}
-          className={`popup__button-lang ${currentLanguage === "ru" && "popup__button-lang_active"}`}
-        >
-          Ru
-        </button>
-        <button
-        name="uk"
-          onClick={handleCurrentLang}
-          className={`popup__button-lang ${currentLanguage === "uk" && "popup__button-lang_active"}`}
-        >
-          Uk
-        </button>
+          <button
+            name="en"
+            onClick={handleCurrentLang}
+            className={`popup__button-lang ${
+              currentLanguage === "en" && "popup__button-lang_active"
+            }`}
+          >
+            En
+          </button>
+          <button
+            name="ru"
+            onClick={handleCurrentLang}
+            className={`popup__button-lang ${
+              currentLanguage === "ru" && "popup__button-lang_active"
+            }`}
+          >
+            Ru
+          </button>
+          <button
+            name="uk"
+            onClick={handleCurrentLang}
+            className={`popup__button-lang ${
+              currentLanguage === "uk" && "popup__button-lang_active"
+            }`}
+          >
+            Uk
+          </button>
         </div>
       </div>
     </div>

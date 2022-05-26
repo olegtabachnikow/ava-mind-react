@@ -18,28 +18,31 @@ function LanguageChange({ onLang }) {
         }`}
       >
         <button
-        name="en"
+          name="en"
           onClick={handleCurrentLang}
           className="header__button-lang link_animated header__button-lang_value_en"
         >
           En
         </button>
         <button
-        name="ru"
+          name="ru"
           onClick={handleCurrentLang}
           className="header__button-lang link_animated header__button-lang_value_ru"
         >
           Ru
         </button>
         <button
-        name="uk"
+          name="uk"
           onClick={handleCurrentLang}
           className="header__button-lang link_animated header__button-lang_value_uk"
         >
           Uk
         </button>
       </div>
-      <div className="header__lang-wrapper link_animated" onClick={handleLangsVisibility}>
+      <div
+        className="header__lang-wrapper link_animated"
+        onClick={handleLangsVisibility}
+      >
         <img
           className="header__lang-wrapper-icon"
           src={languagesPath}
