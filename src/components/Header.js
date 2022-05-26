@@ -6,7 +6,7 @@ import "../css/Header.css";
 function Header({ isHidden, children, handlePopup, isPopupOpened }) {
   const [scrolled, setIsScrolled] = React.useState(false);
   const handleScroll = React.useCallback(() => {
-    if (window.scrollY > 70) {
+    if (window.scrollY > 50) {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
@@ -24,7 +24,9 @@ function Header({ isHidden, children, handlePopup, isPopupOpened }) {
     handlePopup(!isPopupOpened);
   }
   return (
-    <div className={`header ${isHidden && "hidden"} ${scrolled && "header_white"}`}>
+    <div
+      className={`header ${isHidden && "hidden"} ${scrolled && "header_white"}`}
+    >
       <button
         className={`popup__button ${isPopupOpened && "popup__button_active"}`}
         type="button"

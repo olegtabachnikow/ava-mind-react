@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes, HashRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import {
   TranslationContext,
   translations,
@@ -19,6 +19,7 @@ import Footer from "./Footer";
 import Contacts from "./Contacts";
 import Popup from "./Popup";
 import ScrollToTop from "./ScrollToTop";
+import bg1 from "../assets/images/background-1.png";
 
 function App() {
   const [lang, setLang] = React.useState("en");
@@ -29,19 +30,16 @@ function App() {
     React.useState("");
   const [currentUserMail, setCurrentUserMail] = React.useState("");
   const [isActive, setIsActive] = React.useState(false);
-  const [isHidden, setIsHidden] = React.useState(true);
+  const [isHidden, setIsHidden] = React.useState(false);
   const [isSent, setIsSent] = React.useState(false);
   const [isPopupOpened, setIsPopupOpened] = React.useState(false);
+  const [background, setBackground] = React.useState(bg1);
   React.useEffect(() => {
     setLang(lang);
-  },[lang]);
-
-  React.useEffect(()=> {
-    setTimeout(() => {
-      setIsHidden(false);
-    }, 5000);
-  })
-
+  }, [lang]);
+  function handlePreloader(data) {
+    setIsHidden(data);
+  }
   function handleOpenPopup(data) {
     setIsPopupOpened(data);
   }
@@ -51,6 +49,9 @@ function App() {
   function handleActiveStance(data) {
     setIsActive(data);
   }
+  function handleBackground(data) {
+    setBackground(data);
+  }
   const currentUserData = {
     name: currentUserName,
     job: currentUserJob,
@@ -58,7 +59,7 @@ function App() {
     userStance: currentPersonalCondition,
     email: currentUserMail,
   };
-
+  const currentSessionName = window.sessionStorage.getItem("name");
   function handleUserName(data) {
     setCurrentUserName(data);
   }
@@ -81,69 +82,110 @@ function App() {
   }
 
   return (
-    <div className="page">
+    <div className="page" style={{ backgroundImage: `url(${background})` }}>
       <TranslationContext.Provider value={translations[lang]}>
-        <HashRouter>
-        <ScrollToTop/>
-        <Popup onLang={handleCurrentLanguage} isPopupOpened={isPopupOpened} currentLanguage={lang} onClose={handleOpenPopup}/>
-          <Header isHidden={isHidden} handlePopup={handleOpenPopup} isPopupOpened={isPopupOpened}>
-            <LanguageChange
-              onLang={handleCurrentLanguage}
-            />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Popup
+            onLang={handleCurrentLanguage}
+            isPopupOpened={isPopupOpened}
+            currentLanguage={lang}
+            onClose={handleOpenPopup}
+          />
+          <Header
+            isHidden={isHidden}
+            handlePopup={handleOpenPopup}
+            isPopupOpened={isPopupOpened}
+          >
+            <LanguageChange onLang={handleCurrentLanguage} />
           </Header>
           <Section>
             <Routes>
               <Route
                 path="/"
-                element={<Preloader />}
+                element={<Preloader onPreloader={handlePreloader} />}
               />
               <Route
                 path="/intro"
-                element={<Intro lang={lang} onUser={handleUserName} />}
+                element={
+                  <Intro
+                    lang={lang}
+                    onUser={handleUserName}
+                    currentName={currentSessionName}
+                    handleBackground={handleBackground}
+                  />
+                }
               />
               <Route
                 path="/greetings"
                 element={
                   <Greetings
                     lang={lang}
-                    currentUser={currentUserName}
+                    currentUser={currentSessionName}
                     onUser={handleUserJob}
+                    handleBackground={handleBackground}
                   />
                 }
               />
               <Route
                 path="/condition"
-                element={<Condition lang={lang} onUser={handleUserCondition} />}
+                element={
+                  <Condition
+                    lang={lang}
+                    onUser={handleUserCondition}
+                    handleBackground={handleBackground}
+                  />
+                }
               />
               <Route
                 path="/mail"
                 element={
                   <Mail
                     lang={lang}
-                    currentUser={currentUserName}
+                    currentUser={currentSessionName}
                     onUser={handleUserMail}
                     data={currentUserData}
+                    handleBackground={handleBackground}
                   />
                 }
               />
               <Route
                 path="/thanks"
-                element={<Thanks lang={lang} currentUser={currentUserData} isSent={isSent} handleDataSend={handleSend}/>}
+                element={
+                  <Thanks
+                    lang={lang}
+                    currentUser={currentUserData}
+                    isSent={isSent}
+                    handleDataSend={handleSend}
+                    currentUserName={currentSessionName}
+                    handleBackground={handleBackground}
+                  />
+                }
               />
               <Route
                 path="/video"
-                element={<Video lang={lang} currentUser={currentUserName} />}
+                element={
+                  <Video
+                    lang={lang}
+                    currentUser={currentSessionName}
+                    handleBackground={handleBackground}
+                  />
+                }
               />
               <Route
                 path="/contacts"
                 element={
-                  <Contacts lang={lang} setActiveStance={handleActiveStance} />
+                  <Contacts
+                    lang={lang}
+                    setActiveStance={handleActiveStance}
+                    handleBackground={handleBackground}
+                  />
                 }
               />
             </Routes>
           </Section>
           <Footer lang={lang} isActive={isActive} isHidden={isHidden} />
-        </HashRouter>
+        </BrowserRouter>
       </TranslationContext.Provider>
     </div>
   );
