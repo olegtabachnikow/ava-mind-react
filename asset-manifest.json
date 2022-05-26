@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/AVA-Mind-React/static/css/main.591cfbad.css",
-    "main.js": "/AVA-Mind-React/static/js/main.47ad1eb9.js",
+    "main.js": "/AVA-Mind-React/static/js/main.c4c88afd.js",
     "static/js/787.3a3bbdee.chunk.js": "/AVA-Mind-React/static/js/787.3a3bbdee.chunk.js",
     "static/media/background-3.png": "/AVA-Mind-React/static/media/background-3.ee188948c4d65e6c76e9.png",
     "static/media/background-4.png": "/AVA-Mind-React/static/media/background-4.4fdddfc09baeed41d058.png",
@@ -29,11 +29,11 @@
     "static/media/arrow_back.svg": "/AVA-Mind-React/static/media/arrow_back.e4d9339c7d781692cdf1a749043c0dc6.svg",
     "static/media/arrow.svg": "/AVA-Mind-React/static/media/arrow.d82435abf5ec1f7aed414eb69c7a16c8.svg",
     "main.591cfbad.css.map": "/AVA-Mind-React/static/css/main.591cfbad.css.map",
-    "main.47ad1eb9.js.map": "/AVA-Mind-React/static/js/main.47ad1eb9.js.map",
+    "main.c4c88afd.js.map": "/AVA-Mind-React/static/js/main.c4c88afd.js.map",
     "787.3a3bbdee.chunk.js.map": "/AVA-Mind-React/static/js/787.3a3bbdee.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.591cfbad.css",
-    "static/js/main.47ad1eb9.js"
+    "static/js/main.c4c88afd.js"
   ]
 }
